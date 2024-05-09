@@ -54,7 +54,15 @@ function playRound(humanChoice,computerChoice){
 }
 
 function playGame(){
+    let rounds = 0
+    while (rounds <5){
+        playRound();
+        console.log("Your Score: " + humanScore)
+        console.log("Computer Score: " + computerScore)
+        rounds++;
+    }
+    console.log("Game Over! You won " + humanScore + " times out of 5!")
 
 }
 
-playRound()
+playGame()
