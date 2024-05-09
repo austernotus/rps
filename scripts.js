@@ -1,9 +1,60 @@
 
 const rpsChoices = ['rock','paper','scissors']
+let humanScore = 0
+let computerScore = 0
 
 function getComputerChoice(){
     choice = rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
     return choice;
 }
 
-console.log(getComputerChoice())
+function getHumanChoice(){
+    let playerChoice = ""
+    while (playerChoice != "rock" && playerChoice != "paper" && playerChoice != "scissors"){
+        console.log("Please choose Rock, Paper or Scissors.")
+        playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
+    }
+        return playerChoice;
+}
+/*    let playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
+    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors"){
+        return playerChoice;
+    }
+    else {
+        console.log("Please choose Rock, Paper or Scissors.")
+        playRound();
+    }*/
+
+
+function checkWinner(player,computer){
+    if (player == "rock" && computer == "scissors"){
+        console.log("You win! Rock beats scissors.")
+        humanScore++;
+    } else if ( player == "paper" && computer == "rock"){
+        console.log("You win! Paper beats rock.")
+        humanScore++;
+    } else if (player == "scissors" && computer == "paper"){
+        console.log("You win! Scissors beats paper.")
+        humanScore++;
+    } else{
+        console.log("You lose! " + computer.charAt(0).toUpperCase() + computer.slice(1) + " beats " + player + "." )
+        computerScore++;
+    }
+}
+
+function playRound(humanChoice,computerChoice){
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice();
+    if (computerChoice == humanChoice) {
+        console.log("Draw! You both chose " + humanChoice + ".");
+    }
+    else {
+        checkWinner(humanChoice, computerChoice);
+    }
+}
+
+function playGame(){
+
+}
+
+playRound()
