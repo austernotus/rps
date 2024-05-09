@@ -16,15 +16,6 @@ function getHumanChoice(){
     }
         return playerChoice;
 }
-/*    let playerChoice = prompt("Rock, Paper, Scissors?").toLowerCase();
-    if (playerChoice == "rock" || playerChoice == "paper" || playerChoice == "scissors"){
-        return playerChoice;
-    }
-    else {
-        console.log("Please choose Rock, Paper or Scissors.")
-        playRound();
-    }*/
-
 
 function checkWinner(player,computer){
     if (player == "rock" && computer == "scissors"){
